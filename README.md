@@ -11,14 +11,14 @@
     <a href="#Jupyter_virtual_environment">Jupyter_virtual_environment</a> •
 </p>
 
-## Commands  
+### Commands  
 Has almost of linux commands and explaination 
 
-## kmonad  
+### kmonad  
 My kmonad config and steps to setup kmonad on your system 
 
-## GitHub 
+### GitHub 
 Explain commands on github such as branching and basic commands such as commit ,push,pull, and more !
 
-## Jupyter_virtual_environment 
+### Jupyter_virtual_environment 
 Steps to create virtual environment on linux and use it as default jupyter notebook 
