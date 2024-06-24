@@ -1,5 +1,5 @@
 <h1 align="center">
- <img alt="Linux" title="Linux" height="55" width="140" src="linux.jpg"/>
+ <img alt="Linux" title="Linux" height="65" width="140" src="linux.jpg"/>
 </h1>   
 
 <h4 align="center">My Linux Config And Important Notes</h4>
@@ -12,13 +12,17 @@
 </p>
 
 ## Commands  
-Has almost of linux commands and explaination 
+- Alomst linux commands 
+- notes with each command
 
 ## kmonad  
-My kmonad config and steps to setup kmonad on your system 
+- Step to step to setup kmonad in your system 
+- My kmonad config.kbd 
 
 ## GitHub 
-Explain commands on github such as branching and basic commands such as commit ,push,pull, and more !
+-Basic github commands
+-Usecases and conflicts with some commands
 
 ## Jupyter_virtual_environment 
-Steps to create virtual environment on linux and use it as default jupyter notebook 
+-Step to step to create virtual environment 
+-Use this environment as default and run notebooks on it 
