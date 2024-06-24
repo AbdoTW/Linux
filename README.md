@@ -1,10 +1,10 @@
 # Linux
 My Linux config and settings 
 
-## Commands  
+#### Commands  
 Has almost of linux commands and explaination 
 
-## kmonad  
+### kmonad  
 My kmonad config and steps to setup kmonad on your system 
 
 ## GitHub 
