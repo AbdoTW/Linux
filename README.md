@@ -1,10 +1,20 @@
-# Linux
-My Linux config and settings 
+<h1 align="center">
+ Linux
+</h1>
 
-#### Commands  
+<h4 align="center">My Linux Config And Important Notes</h4>
+
+<p align="center">
+    <a href="#Commands">Commands</a> •
+    <a href="#kmonad">kmonad</a> •
+    <a href="#GitHub">GitHub</a> •
+    <a href="#Jupyter_virtual_environment">Jupyter_virtual_environment</a> •
+</p>
+
+## Commands  
 Has almost of linux commands and explaination 
 
-### kmonad  
+## kmonad  
 My kmonad config and steps to setup kmonad on your system 
 
 ## GitHub 
