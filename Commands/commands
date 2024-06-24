@@ -1,0 +1,103 @@
+ls -al --> to show the hidden files & ls -al "path_to_directory" --> gonna show all the files included hidden files in this path 
+
+pwd --> "print working directory" 
+
+cd /  --> go to the root directory
+
+touch txt{1..5} --> create txt1 ,txt2 ..... ,txt5 
+rm txt{1..5} --> remove txt1 ,txt2 ..... ,txt5
+
+nano filename --> open the file and you can add edit the content 
+
+man anyword --> give you details about this word 
+
+whoami 
+
+whereis package_name or any word --> tell the path directory to it 
+
+wget + url , curl + url > filename  ----> ways to download from url
+
+zip  name_of_zipped_file  original_file --> zip original to zipped file or folder
+unzip zipped_file  --> get the original file with the same name before zipping 
+
+./binary file ---> execute the binary file 
+chmod +x binaryfile --> make the file executable (give permissions to act as a program)
+cd ~ --> go to home && cd / --> go to root 
+
+cp existing_file ./directory_name --> copy file to directory 
+mv existing_file ./directory_name --> move file  to directory 
+rm path/file_name --> to remove file 
+rm ../../filename --> rm file from 2 previous directory, cp ,mv filename ../../  --> to move file to previous 2 directory
+rmdir path/directory_name --> to remove empty directory 
+rm -r path/directory_name --> to remove empty and nonempty directory (-r recursive)
+
+
+sudo apt install ./filename.deb    --> to install after downloading
+
+ctrl + shift + v and c in terminal --> copy and past in the terminal
+
+sudo usermod -aG input abdelrahman-tawfik  --> add yourself to input group , and if tap show all the groups 
+
+ctrl + v  and the key --> show the sequence of the key in the terminal .
+
+sudo !! --> !! means the previous command 
+
+up and down arrows --> get the previous and next command 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;chown && chmod;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+when you write ls -al , you see this line for each folder or file   drwx------ 44 abdelrahman-tawfik abdelrahman-tawfik  4096 Jun 23 19:20 .config 
+you can change the user and group owner called abdelrahman-tawfik. drwx-------  d means directory not file and rwx means read write executable for owner 
+"drwx --- ---"    without d there are 9 bits each 3 bit for "owner group other" for each one can give access for write read execute 
+we can change all of this , we can change the user and group owner or one of them using """sudo chown newuser:groupname filename""" chown means change owner 
+and we can set permissions for this file or folder using ""sudo chmod --- filename"" each - is a octan number and means give access for "owner group other" in order 
+if first - equal 5 that's mean in 3 bit 101 and means yes for read , no for write , yes for execute for the owner , and the second char - if equal 7 means 111 in binary 
+and this mean every one with me in the groups can write read execute , and third char - if eqal 1 means 001 no for read , no for write , yes for execute for any one 
+
+
+
+
+
+
+
+Needs
+
+
+3 fingers with touchpad
+make backup for home directory which contains all configuration and bins -- > search 
+
+
+
+
+
+
+
+problems
+
+how can i remove wifi hotspot app 
+
+what is the snap and linux-wifi-hotspot in the home directory ?? and what is the thunderbird.tmp folder in the downloads ??
+
+what is the difference between 
+cd home/abdo --> in the same directory   ,  ----------> 1 
+/home/abdo  --> the path from the root (entire path ) ,
+and ./home/abdo -->   . from root to the current directory   -------------> 2  && . means the current directory 
+1 & 2 the same command 
+
+
+
+
+
+Abdelrahman HU :
+
+ps ---> show all the process &&   fg + tab ---> forground >> return the stopped processes to running 
+bg ---> background --> running the current program in the background 
+jobs --> show all the waiting processes and the running background programs (stopped or running in the background )
+
+
+
+nmcli device wifi  -- > search 
+
+
+ 
