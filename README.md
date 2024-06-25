@@ -1,5 +1,5 @@
 <h1 align="center">
- <img alt="Linux" title="Linux" height="65" width="140" src="linux.png"/>
+ <img alt="Linux" title="Linux" height="65" width="140" src="linux.svg"/>
 </h1>   
 
 <h4 align="center">My Linux Config And Important Notes</h4>
