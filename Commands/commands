@@ -79,6 +79,11 @@ rm ../../filename --> rm file from 2 previous directory, cp ,mv filename ../../ 
 rmdir path/directory_name --> to remove empty directory 
 rm -r path/directory_name --> to remove empty and nonempty directory (-r recursive)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;download from youtube ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+sudo apt install yt-dlp
+yt-dlp -f 'bestvideo[height<=1440]+bestaudio' [video_url]  --> download video or playlist url with customization of the resolution  
+		if height<=720 will download it with 720p if not available go to 480p and so on  
+
 
 
 sudo apt install ./filename.deb    --> to install after downloading
