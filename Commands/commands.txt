@@ -115,6 +115,16 @@ function setcharging()
 write this lines in .bashrc file and to enable it write "setcharging 1" and "setcharging 0" for disable 
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Jobs & fg & bg ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+when we learne  tmux , we will ignore this 
+when you run a program in terminal it is running in the Fg by default 
+ctrl+z  --> stop running , we can use it with fg and bg 
+ctrl+c  --> kill running process 
+fg  --> means forground 
+bg  --> means background 
+jobs  --> show all the running and stopped programs in current session
+fg %job_number_in_jobs  --> run the prgoram in forground
+bg %job_number_in_jobs  --> run the program in background 
 
 
 
