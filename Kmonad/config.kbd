@@ -9,37 +9,110 @@
 
 (defsrc
 	esc
-	grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-	tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+	grv  1    2    3    4    5    6    7    8    9    0    -    =          bspc ins home pgup
+	tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     del end pgdn 
 	caps  a    s    d    f    g    h    j    k    l    ;    '    ret
-	lsft z    x    c    v    b    n    m    ,    .    /    rsft
-	lctl lmet lalt           spc            ralt rctl
+	lsft z    x    c    v    b    n    m    ,    .    /    rsft	              up
+	lctl lmet lalt           spc            ralt rctl	               left  down rght
 )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defalias  ;; for revision 
+	;; loadLayer (layer-toggle layer_name)   ;; when holding down this alias the layer is loaded , when letting go of alias key --> return to previous layer
+        ;; alias0 lalt   ;; remap key to lalt
+	;; mymacro (tap-macro h e l p m e) =   mymacro #(h e l p m e)       ;; when click this alias word 'helpme' will be written
+	;; alias1 (tap-next-release esc lctl)     ;; when holdding down key acts as lctl , when we tap it it acts as esc
+	;;fn3 (tap-hold-next-release 250 esc (layer-toggle func1)) ;; when tap this key it becomes esc , when holding for 250 ms it will load the func1 layer,when release back to base layer
+	;;fn2 (around-next(layer-toggle func1))
+	;; ctrlr (around lctl rght)       ;; combine two keys into one.
+	;; alias2 (around a  (around b c)) ;; combine three keys a then b then c 
+	;; alias3 (around lstf @alias) ;; combine a key with function 
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defalias
-	fn1 (layer-toggle func1)
-	fn3 (tap-hold-next-release 250 esc (layer-toggle func1))
-	;; fn2 (around-next(layer-toggle func1))
+	
+	snormalB (tap-hold-next-release 250 (layer-switch normal) esc)
+	snormal (layer-switch normal)
+
+	svisual (layer-switch visual)
+	sinsert (layer-switch insert)
+        w (around lctl rght)
+	b (around lctl left)
+	y (around lctl c)
+	p (around lctl v)
+	c (around lctl x)
+	u (around lctl z)
+	;; visual (around lsft @w)
+	;;i (layer-switch baselayer)
+	;; auto_p (tap-hold-next-release 0 (around lctl v) (layer-switch baselayer))  ;; auto switch to baselayer when pressing p key in normal layer
+	
 )
 
 
-
-(deflayer baselayer		
+(deflayer insert   ;;This is the starting layer 
  	esc
-	grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-	tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-    @fn3  a    s    d    f    g    h    j    k    l    ;    '    ret
-	lsft z    x    c    v    b    n    m    ,    .    /    rsft
-	lctl lmet lalt           spc            ralt rctl
+	grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc       ins home pgup 
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	tab  q    w    e    r    t    y    u    i    o    p    [    ]    \          del end pgdn
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        @snormalB  a    s    d    f    g    h    j    k    l    ;    '    ret
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	lsft z    x    c    v    b    n    m    ,    .    /    rsft                      up
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	lctl lmet lalt          spc            ralt rctl                            left  down rght
 )
 
 
-(deflayer func1
- 	esc
-	grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-	tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-	caps  a    s    d    f    g    left    down    up    rght    ;    '    ret
-	lsft z    x    c    v    b    n    m    ,    .    /    rsft
-	lctl lmet lalt           spc            ralt rctl
+(deflayer normal
+	esc
+	XX  1    2    3    4    5    6    7    8    end    0    -    =    bspc                  ins home pgup
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	XX  XX   @w   XX    XX    XX    @y   @u    @sinsert    XX     @p   XX    XX    XX     del end pgdn
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        @snormal   XX   XX    XX    XX   XX   left    down    up    rght    XX    XX    ret
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	XX  XX   XX    @c   @svisual     @b   XX    XX     XX    XX    XX    XX		            up
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	XX XX XX           spc            XX XX                                             left  down rght
 )
+
+
+(defalias  ;;for   visual layer
+        vw (around lsft @w)
+	vb (around lsft @b) 
+	vleft (around lsft left)
+	vdown (around lsft down)
+	vup (around lsft up)
+	vrght (around lsft rght)
+
+	vd (around bspc @snormal)
+	vy (around @y @snormal)
+	vc (around @c @sinsert)
+	vp (around @p @snormal)
+	vs (around bspc @sinsert)
+        vend (around lsft end)
+
+)
+
+(deflayer visual 
+	esc
+	XX  1    2    3    4    5    6    7    8    @vend    0    -    =    @vleft                              ins home pgup
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	XX  XX    @vw   XX    XX    XX    @vy   @snormal    XX    XX     @vp   XX    XX    XX               del end pgdn
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	@snormal  XX   @vs    @vd    XX   XX   @vleft    @vdown    @vup    @vrght    XX    XX    @vdown
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	XX  XX   XX    @vc   @snormal   @vb   XX    XX     XX    XX    XX    rsft                                up
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	XX XX XX           @vrght            XX XX                                                        left  down rght
+)
+
+
+
+;; referance link : https://github.com/kmonad/kmonad/blob/master/doc/quick-reference.md#full-example
+
+

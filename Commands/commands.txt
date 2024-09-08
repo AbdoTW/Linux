@@ -54,7 +54,6 @@ find ~ -name "file_name"  --> search with filename in the home , this is better 
 find <path> -iname "*.txt" --> "iname" means case-insensitive , will get the lower and upper cases &&and "-name" 
 		means case-sensitive will get only the lower or upper case in filenameand here search with 
 		extensions .pdf , .txt , .kbd and so on in case-insensitive .txt or .TXT or .Txt will match the result 
-find ~ -type d  --> find directories in the home path 
 find <path> -type f --> find regular files "not links or directories"
 find <path> -type l --> find symbolic link 
 find <path> -type d -name "dir_name"  --> find directory by name 
@@ -102,9 +101,11 @@ rm -r path/directory_name --> to remove empty and nonempty directory (-r means r
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;download from youtube ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 sudo apt install yt-dlp
-yt-dlp -f 'bestvideo[height<=1440]+bestaudio' [video_url]  --> download video or playlist url with customization of the resolution  
+yt-dlp -f 'bestvideo[height<=1440]+bestaudio' [video_url] --> download video or playlist url with customization of the resolution  
 		if height<=720 will download it with 720p if not available go to 480p and so on  
-		
+yt-dlp -f 'bestvideo[height<=1440]+bestaudio' -N 5 http:video1 URL : http:video2 URL : ... : http:video5 URL  --> download videos sequential 
+
+if you want to download them in Parallel --> open multiple tmux bins 
 		
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Conversation mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 # Default is enabled
@@ -125,6 +126,12 @@ bg  --> means background
 jobs  --> show all the running and stopped programs in current session
 fg %job_number_in_jobs  --> run the prgoram in forground
 bg %job_number_in_jobs  --> run the program in background 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; GitHub Token ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+token : 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
+git remote set-url origin https://<token>@github.com/<username>/<repo>
+git remote set-url origin https://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@github.com/AbdoTW/Linux
 
 
 
