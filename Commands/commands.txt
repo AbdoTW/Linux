@@ -129,9 +129,10 @@ bg %job_number_in_jobs  --> run the program in background
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; GitHub Token ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-token : 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
+token : sldfjoiefwljfeiofjwijfeiwojfeklfjs
 git remote set-url origin https://<token>@github.com/<username>/<repo>
-git remote set-url origin https://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@github.com/AbdoTW/Linux
+git remote set-url origin https://sldfjoiefwljfeiofjwijfeiwojfeklfjs
+@github.com/AbdoTW/Linux
 
 
 
